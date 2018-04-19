@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>退款申请</title>
+		<link rel="stylesheet" type="text/css" href="css/ly.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="top01">
+			<a href="javascript:void(0);" onclick="history.back()">
+				<span class="fl mui-icon mui-icon-arrowleft"></span>
+			</a>
+			<span class="title">退款申请</span>
+		</div>
+		<form action=""class="fb_form tk_form" method="post" style="background: white;">
+			<p>退款原因<s>*</s></p>
+			<div class="sel_box">
+				<select name="">
+					<option value="">退款原因</option>
+					<option value="">买错了，换个其他的</option>
+					<option value="">任性，就是不想要了</option>
+					<option value="">其他原因</option>
+				</select>
+				<span class="mui-icon mui-icon-arrowright sel"></span>
+			</div>
+			<p>退款金额<s>*</s></p>
+			<input type="text" readonly id="" value="800" />
+			<p>退款说明</p>
+			<textarea class="fb_cont" style="height: 200px;margin: 0;width: 100%;" name="" rows="" cols="" maxlength="200" placeholder="请输入退款说明"></textarea>
+			<p class="fb_cont_num" style="margin-top: -30px;">0/200</p>
+			<button class="submit">提交申请</button>
+		</form>
+		<script type="text/javascript">
+			$(function(){
+				$(window).keydown(function(){
+					var leng = $(".fb_cont").val().length;
+					$(".fb_cont_num").text(leng+'/200');
+				});
+			});
+			$(".star_box img").click(function(){
+				var ind = $(this).index()+1;
+				for (var i = 0; i < $(".star_box img").length; i++) {
+					if (i<ind) {
+						$(".star_box img").eq(i).attr('src','images/star.png');
+					}else{
+						$(".star_box img").eq(i).attr('src','images/star_n.png');
+					}
+				}
+				alert('你点了'+ind);
+			});
+		</script>
+	</body>
+</html>

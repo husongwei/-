@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>新增地址</title>
+		<link rel="stylesheet" type="text/css" href="css/ly.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
+		<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+		<style type="text/css">
+			.top01 {
+				background: #2cbb52;
+				color: white;
+			}
+			
+			.top01 span {
+				color: white;
+			}
+			
+			.mui-popup-button.mui-popup-button-bold {
+				background: #2AC845;
+				color: white;
+			}
+			
+			.mui-switch.mui-active {
+				background: #fc4f2c;
+				border-color: #fc4f2c;
+			}
+			.mui-picker,.mui-poppicker-header{background: white;}
+		</style>
+	</head>
+
+	<body>
+		<div class="top01">
+			<a href="javascript:void(0);" onclick="history.back()">
+				<span class="fl mui-icon mui-icon-arrowleft"></span>
+			</a>
+			<span class="title">新增地址</span>
+			
+		</div>
+		<form class="mui-input-group">
+			<div class="mui-input-row">
+				<input type="text" class="mui-input-clear" placeholder="请输入收货人姓名">
+			</div>
+			<div class="mui-input-row">
+				<input type="text" class="mui-input-clear" placeholder="请输入收货人联系方式">
+			</div>
+			<div class="mui-input-row">
+				<input id="ssq" type="text" readonly class="mui-input-clear" placeholder="省、市、区">
+				<span class="mui-icon mui-icon-arrowright ssq"></span>
+			</div>
+			<textarea class="xx_addr" name="" rows="" cols="" placeholder="请输入详细地址"></textarea>
+			<div class="mui-input-row">
+				<label for="" style="width: 56%;">设为默认地址</label>
+				<div id="mySwitch" class="fr mui-switch mui-switch-mini">
+					<div class="mui-switch-handle "></div>
+				</div>
+			</div>
+			<button class="save_addr">保存并使用</button>
+		</form>
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#mySwitch").click(function(){
+				var isActive = document.getElementById("mySwitch").classList.contains("mui-active");
+				if(isActive) {
+					mui.toast("打开状态");
+				} else {
+					mui.toast("关闭状态");
+				}
+			})
+			$("#ssq").click(function(){
+				var picker = new mui.PopPicker({
+					layer: 3
+				});
+				picker.setData([{
+					value: '110000',
+					text: '北京市',
+					children: [{
+						value: "110101",
+						text: "东城区",
+						children:[{
+							value:'1111111',
+							text:'不知道1'
+						},{
+							value:'2222',
+							text:'不知道2'
+						},{
+							value:'3333',
+							text:'不知道3'
+						},{
+							value:'4444',
+							text:'不知道4'
+						}
+						]
+					}]
+				}, {
+					value: '120000',
+					text: '天津市',
+					children: [{
+						value: "120101",
+						text: "和平区"
+					}, {
+						value: "120102",
+						text: "河东区"
+					}, {
+						value: "120104",
+						text: "南开区"
+					}]
+				}])
+				picker.pickers[0].setSelectedIndex(0);
+				picker.pickers[1].setSelectedIndex(0);
+				picker.pickers[2].setSelectedIndex(0);
+				picker.show(function(SelectedItem) {
+//					console.log(SelectedItem,SelectedItem[0].text);
+					var s1 = SelectedItem[0].text;
+					var s2 = SelectedItem[1].text;
+					var q1 = SelectedItem[2].text;
+					if(s1 == undefined)s1 = '';
+					if(s2 == undefined)s2 = '';
+					if(q1 == undefined)q1 = '';
+					var ssq = s1+s2+q1;
+					$("#ssq").val(ssq);
+				})
+			});
+		</script>
+	</body>
+
+</html>

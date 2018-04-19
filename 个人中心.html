@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>个人中心</title>
+		<link rel="stylesheet" type="text/css" href="css/ly.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+		<style type="text/css">
+			.mui-table-view{background: white!important;}
+			.mui-table-view-cell a{color: #333!important;}
+			.mui-table-view-cell a b{color: red!important;}
+		</style>
+	</head>
+	<body>
+		<div class="top01">
+			<a href="javascript:void(0);" onclick="history.back()">
+				<span class="fl mui-icon mui-icon-arrowleft"></span>
+			</a>
+			<span class="title">个人中心</span>
+		</div>
+		<ul class="user_cent">
+			<li>
+				头像
+				<a href="javascript:void(0);" class="fr cg_tx">
+					<img src="images/tx02.png"/>
+					<span class="mui-icon mui-icon-arrowright" style="margin-top: -25px;"></span>
+				</a>
+			</li>
+			<li>
+				真实姓名
+				<a href="" class="fr">
+					<span>曲奇</span>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</a>
+			</li>
+			<li>
+				我的电话
+				<a href="" class="fr">
+					<span>12345687977</span>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</a>
+			</li>
+			<li>
+				从事行业
+				<a href="" class="fr">
+					<span>开发工程师</span>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</a>
+			</li>
+			<li>
+				我的家乡
+				<a href="" class="fr">
+					<span>北京市昌平区</span>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</a>
+			</li>
+			<li>
+				所在城市
+				<a href="" class="fr">
+					<span>北京市朝阳区</span>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</a>
+			</li>
+		</ul>
+		<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+		    <!-- 可选择菜单 -->
+		    <ul class="mui-table-view">
+		      <li class="mui-table-view-cell">
+		        <a href="#">拍照</a>
+		      </li>
+		      <li class="mui-table-view-cell">
+		        <a href="#">从手机相册选择</a>
+		      </li>
+		    </ul>
+		    <!-- 取消菜单 -->
+		    <ul class="mui-table-view">
+		      <li class="mui-table-view-cell">
+		        <a href="#sheet1"><b>取消</b></a>
+		      </li>
+		    </ul>
+		</div>
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".cg_tx").click(function(){
+				mui('#sheet1').popover('toggle');
+			});
+		</script>
+	</body>
+</html>

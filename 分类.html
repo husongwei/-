@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>分类</title>
+		<link rel="stylesheet" type="text/css" href="css/ly.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="top01">
+			<a href="javascript:void(0);" onclick="history.back()">
+				<span class="fl mui-icon mui-icon-arrowleft"></span>
+			</a>
+			<span class="title">分类</span>
+		</div>
+		<ul class="tea_l">
+			<li class="cur">乌龙茶</li>
+			<li>红茶</li>
+			<li>绿茶</li>
+			<li>白茶</li>
+			<li>黑茶</li>
+			<li>花茶</li>
+		</ul>
+		<div class="tea_r">
+			<ul style="display: block;">
+				<li>
+					<a href="">
+						<img src="images/tea.png"/>
+						<p>武夷岩茶</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/tea.png"/>
+						<p>武夷岩茶</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/tea.png"/>
+						<p>武夷岩茶</p>
+					</a>
+				</li>
+				<div class="cl"></div>
+			</ul>
+			<ul>
+				<li>
+					<a href="">
+						<img src="images/tea.png"/>
+						<p>武夷gggg茶</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/tea.png"/>
+						<p>ggggggggggggggggggg</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/tea.png"/>
+						<p>武夷岩茶</p>
+					</a>
+				</li>
+				<div class="cl"></div>
+			</ul>
+			<ul>
+				<li>
+					<a href="">
+						<img src="images/tea.png"/>
+						<p>武夷岩茶</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/tea.png"/>
+						<p>武夷岩茶</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/tea.png"/>
+						<p>武夷岩茶</p>
+					</a>
+				</li>
+				<div class="cl"></div>
+			</ul>
+			
+		</div>
+		<script type="text/javascript">
+			$(".tea_r").height($(window).height());
+			$(".tea_l li").click(function(){
+				var ind = $(this).index();
+				$(".tea_l li").removeClass('cur');
+				$(this).addClass(' cur');
+				$(".tea_r ul").hide();
+				$(".tea_r ul").eq(ind).show();
+			});
+		</script>
+	</body>
+</html>

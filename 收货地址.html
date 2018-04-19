@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>收货地址</title>
+		<link rel="stylesheet" type="text/css" href="css/ly.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+		<style type="text/css">
+			.top01{background: #2cbb52;color: white;}
+			.top01 span{color: white;}
+			.mui-popup-button.mui-popup-button-bold{background: #2AC845;color: white;}
+		</style>
+	</head>
+	<body>
+		<div class="top01">
+			<a href="javascript:void(0);" onclick="history.back()">
+				<span class="fl mui-icon mui-icon-arrowleft"></span>
+			</a>
+			<span style="margin-right: -20px">地址管理</span>
+			<a href="" >
+				<span class="fr shop_car_t" style="font-size: 13px;">新增地址</span>
+			</a>
+		</div>
+		<ul class="addr_lis">
+			<li>
+				<div class="cont_box">
+					<p>
+					收货人：小明
+					<span class="fr">123******44</span>
+					</p>
+					<p>收货地址：江苏苏州相城太平镇金澄路88-1号文创园10楼金澄路
+	88-1号文创园10楼</p>
+				</div>
+				<div class="mui-input-row mui-radio mui-left">
+					<label>默认地址</label>
+					<input name="radio1" type="radio" checked>
+				</div> 
+				<a class="del_addr" href="javascript:void(0);">删除</a>
+				<a class="cg_addr" href="javascript:void(0);">编辑</a>
+			</li>
+			<li>
+				<div class="cont_box">
+					<p>
+					收货人：小明
+					<span class="fr">123******44</span>
+					</p>
+					<p>收货地址：江苏苏州相城太平镇金澄路88-1号文创园10楼金澄路
+	88-1号文创园10楼</p>
+				</div>
+				<div class="mui-input-row mui-radio mui-left">
+					<label>默认地址</label>
+					<input name="radio1" type="radio" >
+				</div> 
+				<a class="del_addr" href="javascript:void(0);">删除</a>
+				<a class="cg_addr" href="javascript:void(0);">编辑</a>
+			</li>
+			<li class="mor_addr">
+				<img src="images/mor_addr.png"/>
+			</li>
+		</ul>
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".mor_addr").height($(window).height()-41);
+			$(".del_addr").click(function(){
+				var _this = $(this);
+				var btnArray = ['取消', '确定'];
+                mui.confirm('确定删除改地址？', '提示', btnArray, function(e) {
+                    if (e.index == 1) {
+                       //这里是删除地址的事件
+                       
+                       //页面删除
+                       _this.parent().remove();
+                    } else {
+                    	//你点击了取消
+                    }
+                })
+			});
+		</script>
+	</body>
+</html>
